@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+  }
+  
+  /* Título principal */
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  /* Formulario */
+  form {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  
+  form h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  form input,
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+  }
+  
+  form button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #219150;
+  }
+  
+  /* Lista de materiales */
+  #materiales-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  
+  .material-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+  }
+  
+  .material-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .material-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .material-card p {
+    font-size: 0.95rem;
+    margin: 4px 0;
+  }
+  
+  .material-card .acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .material-card button {
+    flex: 1;
+    margin: 0 5px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .material-card button:hover {
+    background-color: #2980b9;
+  }
+  
+  .material-card button.vendido {
+    background-color: #e67e22;
+  }
+  
+  .material-card button.vendido:hover {
+    background-color: #d35400;
+  }
+  
+  .material-card button.eliminar {
+    background-color: #e74c3c;
+  }
+  
+  .material-card button.eliminar:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Vendido visual */
+  .material-card.vendido {
+    opacity: 0.7;
+    filter: grayscale(90%);
+  }
+  

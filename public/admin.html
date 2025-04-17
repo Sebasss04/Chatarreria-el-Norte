@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Subir material</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <h1>Subir nuevo material</h1>
+  <form id="formulario" enctype="multipart/form-data">
+    <input type="text" name="nombre" placeholder="Nombre" required />
+    <input type="text" name="info" placeholder="Descripción" required />
+    <input type="number" name="precio" placeholder="Precio" required />
+    <select name="estado">
+      <option value="Nuevo">Nuevo</option>
+      <option value="Usado">Usado</option>
+      <option value="Mantenimiento">Mantenimiento</option>
+    </select>
+    <input type="file" name="imagen" required />
+    <button type="submit">Subir</button>
+  </form>
+  <h2>Materiales publicados</h2>
+<div id="materialesAdmin"></div>
+
+
+  <script>
+    const form = document.getElementById('formulario');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      await fetch('/api/materiales', {
+        method: 'POST',
+        body: formData
+      });
+      alert("¡Material subido con éxito!");
+      form.reset();
+    });
+
+    fetch('/api/materiales')
+  .then(res => res.json())
+  .then(data => {
+    const contenedor = document.getElementById('materialesAdmin');
+    contenedor.innerHTML = data.map(m => `
+      <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+        <h3>${m.nombre}</h3>
+        <p>${m.info}</p>
+        <p>Precio: ${m.precio}</p>
+        <p>Estado: <strong>${m.estado}</strong></p>
+        <button onclick="marcarVendido('${m.id}')">Marcar como Vendido</button>
+        <button onclick="eliminarMaterial('${m.id}')">Eliminar</button>
+      </div>
+    `).join('');
+  });
+
+function marcarVendido(id) {
+  fetch(`/api/materiales/${id}/vender`, { method: 'PUT' })
+    .then(() => location.reload());
+}
+
+function eliminarMaterial(id) {
+  if (confirm("¿Estás seguro de eliminar este material?")) {
+    fetch(`/api/materiales/${id}`, { method: 'DELETE' })
+      .then(() => location.reload());
+  }
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+#nosotros {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #nosotros h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  #nosotros p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .equipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .miembro {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .miembro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .miembro h3 {
+    font-size: 1.6em;
+    color: #007b5e;
+    margin-bottom: 10px;
+  }
+  
+  .miembro p {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+  

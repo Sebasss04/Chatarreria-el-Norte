@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatarrería El Fierro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">♻️ Chatarrería el Norte</div>
+    <nav>
+      <a href="nosotros.html">Nosotros</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bienvenida">
+      <h1>Bienvenido a El Fierro</h1>
+      <p>Somos una Empresa dedicada a la compra de chatarra</p>
+      <p>Compramos y vendemos materiales reciclados. Mira lo que tenemos disponible o véndenos tu chatarra desde el formulario.</p>
+    </section>
+
+    <div id="materiales-container"></div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <img id="modal-img" src="" alt="Imagen de material">
+      </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+  </main>
+
+  <section class="Contactar">
+    <h2>¿Tienes chatarra para vender?</h2>
+    <p>Contáctanos directamente por WhatsApp haciendo clic en el botón:</p>
+    <input type="text" id="nombre" placeholder="Tu nombre">
+    <textarea id="descripcion" placeholder="¿Qué chatarra tienes?"></textarea>
+    <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Chatarrería el Norte. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
